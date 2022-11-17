@@ -7,6 +7,8 @@ import { InscriptionComponent } from './user/inscription/inscription.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ConnectedComponent } from './user/connected/connected.component';
 import { HomeComponent } from './home/home.component';
+import { EditProjetComponent } from './admin/edit-projet/edit-projet.component';
+import { EditUserComponent } from './admin/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { HomeComponent } from './home/home.component';
     InscriptionComponent,
     NavbarComponent,
     ConnectedComponent,
-    HomeComponent
+    HomeComponent,
+    EditProjetComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
