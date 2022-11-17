@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Link } from '../models/link';
 import { User } from '../models/user';
@@ -16,15 +17,21 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.menu=[
-      {title:"Accueil",url:"/home",isVisible:true},
-      {title:"Visiteur",url:"/demo/demo1",isVisible:true},
-      {title:"Contributeur",url:"/demo/demo1",isVisible:true},
-      {title:"Project Owner",url:"/demo/demo1",isVisible:true},
-      {title : "Administrateur", url : "/exercice", children : [
-        { title : "Edit User", url : "/exercice/exo1"},
-        { title : "Edit Project", url : "/exercice/exo2"}
+      {title:"Accueil",MinRole:0,url:"/home",isVisible:true},
+      {title : "Contributor",MinRole:1, url : "/exercice", children : [
+        { title : "My Contribution",MinRole: 1 , url : "/exercice/exo1"},
+        { title : "Show all project",MinRole: 1 , url : "/exercice/exo2"}
+      ], isVisible : false},
+      
+      {title : "Project Owner",MinRole:2, url : "/exercice", children : [
+        { title : "My Project",MinRole:2, url : "/exercice/exo1"},
+        { title : "Edit Project",MinRole:2, url : "/exercice/exo2"}
+      ], isVisible : false},
+      
+      {title : "Administrateur",MinRole:3, url : "/Admin", children : [
+        { title : "Edit User",MinRole:3, url : "/AdminEditUser"},
+        { title : "Edit Project",MinRole:3, url : "/AdminEditProject"}
       ], isVisible : false}
-    
     ]
   }
   

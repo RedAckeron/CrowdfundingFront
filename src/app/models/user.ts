@@ -9,6 +9,7 @@ constructor(name:string,role:number)
     }
 
 SetRole(IdRole:number){
+    if(IdRole==0)this.role=0;
     if(IdRole==1)this.role=1;
     if(IdRole==2)this.role=2;
     if(IdRole==3)this.role=3;

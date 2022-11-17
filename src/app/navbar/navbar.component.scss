@@ -15,18 +15,20 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-style: bold;
     }
 
 .secondary-menu {
         margin: 0;
         padding: 0;
-        padding-left: 2%;
+        padding-left: 8%;
         padding-top: 2%;
         width: 100%;
         display: flex;
         flex-direction: column;
+        font-style: oblique;
     }
-    
+
 .PanelTest{
     background-color:red ;
 }
@@ -43,7 +45,3 @@ a{
 a:hover{
     color:salmon;
     }
-
-.role{
-
-}

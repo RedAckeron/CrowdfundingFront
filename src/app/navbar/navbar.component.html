@@ -1,36 +1,35 @@
 <nav>
 
-   <div>
-        <ul class="main-menu">
+   <div class="main-menu">
+        <ul>
             <li *ngFor="let link of menu; let i = index">
-                <a [ngClass]="{isActive: link.isVisible}" (click)="toggleMenu(i)" [routerLink]="link.url">{{link.title}}</a>
-                <ul *ngIf="link.isVisible" class="secondary-menu">
-                    <li *ngFor="let child of link.children">
-                        <a [routerLink]="child.url">{{child.title}}</a>
-                    </li>
-                </ul>
+                <div *ngIf="link.MinRole<=this.user.role">
+                    <a [ngClass]="{isActive: link.isVisible}" (click)="toggleMenu(i)" [routerLink]="link.url">{{link.title}}</a>
+                    <ul *ngIf="link.isVisible" class="secondary-menu">
+                        <li *ngFor="let child of link.children">
+                            <a [routerLink]="child.url">{{child.title}}</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
         </ul>
     </div>
-
-
-
- 
+    <div *ngIf="user.role==0">Role : Visiteur</div>
+    <div *ngIf="user.role==1">Role : User</div>
+    <div *ngIf="user.role==2">Role : Owner</div>
+    <div *ngIf="user.role==3">Role : Admin</div>
     
-        <div class="role">
-            <!-- A effacer apres les test -->
-            <div class="PanelTest">Panel temp pour test role 
-                <button (click)="user.SetRole(0)">Role 0 : Unregistered</button>
-                <button (click)="user.SetRole(1)">Role 1 : Contributeur</button>
-                <button (click)="user.SetRole(2)">Role 2 : Owner</button>
-                <button (click)="user.SetRole(3)">Role 3 : Admin</button>
-            </div>
-
-            <div *ngIf="user.role==0">Role : Visiteur</div>
-            <div *ngIf="user.role==1">Role : User</div>
-            <div *ngIf="user.role==2">Role : Owner</div>
-            <div *ngIf="user.role==3">Role : Admin</div>
+    <div class="role">
+        <!-- A effacer apres les test -->
+        <div class="PanelTest">Panel temp pour test role 
+            <button (click)="user.SetRole(0)">Role 0 : Unregistered</button>
+            <button (click)="user.SetRole(1)">Role 1 : Contributeur</button>
+            <button (click)="user.SetRole(2)">Role 2 : Owner</button>
+            <button (click)="user.SetRole(3)">Role 3 : Admin</button>
         </div>
+
+       
+    </div>
     
     
 </nav>

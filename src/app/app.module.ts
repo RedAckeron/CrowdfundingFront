@@ -9,6 +9,7 @@ import { ConnectedComponent } from './user/connected/connected.component';
 import { HomeComponent } from './home/home.component';
 import { EditProjetComponent } from './admin/edit-projet/edit-projet.component';
 import { EditUserComponent } from './admin/edit-user/edit-user.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EditUserComponent } from './admin/edit-user/edit-user.component';
     ConnectedComponent,
     HomeComponent,
     EditProjetComponent,
-    EditUserComponent
+    EditUserComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
