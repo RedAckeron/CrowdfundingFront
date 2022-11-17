@@ -1,0 +1,11 @@
+<nav>
+    <div *ngIf="user.role==1">Role : User</div>
+    <div *ngIf="user.role==2">Role : Owner</div>
+    <div *ngIf="user.role==3">Role : Admin</div>
+    
+    <ul class="main-menu">
+        <li *ngFor="let item of menu;let i = index">
+            <a [routerLink]="item.url">{{item.title}}</a>
+        </li>
+    </ul>
+</nav>
