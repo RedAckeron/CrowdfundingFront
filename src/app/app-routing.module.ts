@@ -7,14 +7,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
 import { ConnectedComponent } from './user/connected/connected.component';
-import { InscriptionComponent } from './user/inscription/inscription.component';
+//import { InscriptionComponent } from './user/inscription/inscription.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {path:"", component :HomeComponent},
-  {path:"User", component :UserComponent},
-  {path:"UserInscription", component :InscriptionComponent},
-  {path:"UserConnected", component :ConnectedComponent},
+  { path : "user", component : UserComponent, 
+      loadChildren : () => import("./user/user.module").then(m => m.UserModule)},
   {path:"AddProject", component :AddProjectComponent},
   
   {path:"Admin", component :AdminComponent},
