@@ -1,0 +1,44 @@
+.debug{
+    background-color: red;
+}
+label {
+    width: 20%;
+}
+
+input:not(input[type="submit"], input[type="checkbox"]) {
+    width: 50%;
+    height: 26px;
+}
+
+input:focus:not(input[type="checkbox"], input[type="submit"]) {
+    outline: 1px solid black;
+}
+
+input[type="checkbox"]{
+    transform: scale(1.75);
+}
+
+input[type="checkbox"]:checked{
+    accent-color: black;
+    
+}
+
+.form-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2%;
+}
+.txt-error {
+    width: 25%;
+    margin-left: 1%;
+    color : darkred;
+    font-size: small;
+}
+
+.txt-valid {
+    width: 25%;
+    margin-left: 1%;
+    color : green;
+    font-size: small;
+}
