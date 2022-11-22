@@ -16,7 +16,6 @@ Ajouter un project
         <label for="PrjDescription">Description :</label>
         <textarea rows="5" cols="60" formControlName="PrjDescription" placeholder="Entrez ici la description du projet"></textarea>
         <span *ngIf="registerForm.get('PrjDescription')?.touched && registerForm.get('PrjDescription')?.errors?.['required']" class="txt-error">Le champs est requis</span>
-        
         <span *ngIf="registerForm.get('PrjDescription')?.errors?.['minlength'] || registerForm.get('PrjDescription')?.errors?.['maxlength']" class="txt-error">La description dois faire minimum 30 caractères et maximum 1000 caractères</span>
         <span class="txt-valid" *ngIf="registerForm.get('PrjDescription')?.valid">✔</span>
     </div>
@@ -41,8 +40,8 @@ Ajouter un project
         <span class="txt-error" *ngIf="registerForm.errors?.['max5yr']">Durée de maximum 5 ans</span>
         <span class="txt-valid" *ngIf="registerForm.get('PrjDtOut')?.valid">✔</span>
     </div>
-
-
+        
+        
     <div class="form-submit">
         <input class="button" type="submit" value="Envoyer" (click)="sendformprj()">
     </div>
