@@ -25,6 +25,7 @@ const routes: Routes = [
 
   {path: "projects", component : ShowProjectsComponent},
   {path: "edit-project/:id", component : EditProjectComponent},
+
 ];
 
 @NgModule({
