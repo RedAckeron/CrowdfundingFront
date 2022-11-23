@@ -1,0 +1,26 @@
+Ajouter un project
+
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="form-group">
+        <label for="PrjName">Nom du projet:</label>
+        <input id="PrjName" type="text" formControlName="PrjName" placeholder="Nom du projet">
+        <!-- On regarde si le champs est valide ou non (mais on ne saura pas pourquoi il est invalide) -->
+        <!-- <span *ngIf="!registerForm.get('lastname')?.valid" class="txt-error">Le champs n'est pas valide</span> -->
+        <span *ngIf="registerForm.get('PrjName')?.touched && registerForm.get('PrjName')?.errors?.['required']" class="txt-error">Le champs est requis</span>
+
+        <span *ngIf="registerForm.get('PrjName')?.errors?.['minlength'] || registerForm.get('PrjName')?.errors?.['maxlength']" class="txt-error">Le nom du projet doit faire minimum 2 caractères et maximum 100 caractères</span>
+    </div>
+
+    <div class="form-group">
+        <label for="PrjDescription">Description :</label>
+        <textarea rows="5" cols="60" formControlName="PrjDescription" placeholder="Entrez ici la description du projet"></textarea>
+        <span *ngIf="registerForm.get('PrjDescription')?.touched && registerForm.get('PrjDescription')?.errors?.['required']" class="txt-error">Le champs est requis</span>
+
+        <span *ngIf="registerForm.get('PrjDescription')?.errors?.['minlength'] || registerForm.get('PrjDescription')?.errors?.['maxlength']" class="txt-error">La description dois faire minimum 30 caractères et maximum 1000 caractères</span>
+    </div>
+
+
+    <div class="form-submit">
+        <input class="button" type="submit" value="Envoyer">
+    </div>
+</form>

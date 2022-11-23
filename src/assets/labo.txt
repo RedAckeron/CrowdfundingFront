@@ -1,0 +1,56 @@
+Mettre en place une plateforme de Crowdfunding
+
+Type utilisateur : 
+
+- ProjectOwner : 
+	- Soumettre de nouveau projet
+		- Date de début
+		- Date de fin
+		- Descriptif (Contexte)
+		- Titre
+		- Objectif financier
+		- Définir les paliers et récompenses pour les contreparties (minimum 3)
+
+			- (Si un contributeur verse 50€ il atteint le premier palier et obtiens la récompense liée)
+
+
+- Administrateur 
+	- Valider les projets soumis / refuser
+	- Accéder à la liste de tout les projets proposé
+
+- Contributeur
+	- Voir la liste des projets validé
+	- Contribuer finacière à un projet
+
+
+A l'inscription : donner le choix entre les rôles ProjectOwner et Contributeur
+
+Utilisateur :
+
+	- email
+	- password
+	- role
+	- Nickname
+	- birthdate > 18ans
+
+
+Intégrer la sécurité et le JWT => Limité les accès en fonction des rôles
+
+---------------------------------
+Contrainte de travail en équipe : 
+
+
+Team 1 => Jeremy, Michael, Ayoub
+Team 2 => Pol, Phil, William
+Team 3 => Medhy, paul, David
+
+Un Git et un Trello par équipe
+
+----------------------------------
+
+Prévoir un Entité-association
+
+
+
+
+

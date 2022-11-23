@@ -1,0 +1,11 @@
+.project-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.project-row:nth-child(odd){
+  border-top: 1px black solid;
+}
+
+
