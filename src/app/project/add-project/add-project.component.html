@@ -8,39 +8,41 @@ Ajouter un project
         <!-- <span *ngIf="!registerForm.get('lastname')?.valid" class="txt-error">Le champs n'est pas valide</span> -->
         <span class="txt-error" *ngIf="registerForm.get('PrjName')?.touched && registerForm.get('PrjName')?.errors?.['required']" class="txt-error">Le champs est requis</span>
         
-        <span class="txt-error" *ngIf="registerForm.get('PrjName')?.errors?.['minlength'] || registerForm.get('PrjName')?.errors?.['maxlength']" class="txt-error">Le nom du projet doit faire minimum 2 caractères et maximum 100 caractères</span>
-        <span class="txt-error" *ngIf="registerForm.get('PrjName')?.valid">✔</span>
+        <span class="txt-error" *ngIf="registerForm.get('PrjName')?.errors?.['minlength'] || registerForm.get('PrjName')?.errors?.['maxlength']" class="txt-error">❌Le nom du projet doit faire minimum 2 caractères et maximum 100 caractères</span>
+        <span class="txt-valid" *ngIf="registerForm.get('PrjName')?.valid">✔</span>
     </div>
 
     <div class="form-group">
         <label for="PrjDescription">Description :</label>
         <textarea rows="5" cols="60" formControlName="PrjDescription" placeholder="Entrez ici la description du projet"></textarea>
-        <span *ngIf="registerForm.get('PrjDescription')?.touched && registerForm.get('PrjDescription')?.errors?.['required']" class="txt-error">Le champs est requis</span>
-        <span *ngIf="registerForm.get('PrjDescription')?.errors?.['minlength'] || registerForm.get('PrjDescription')?.errors?.['maxlength']" class="txt-error">La description dois faire minimum 30 caractères et maximum 1000 caractères</span>
+        <span class="txt-error" *ngIf="registerForm.get('PrjDescription')?.touched && registerForm.get('PrjDescription')?.errors?.['required']" >❌Le champs est requis</span>
+        <span class="txt-error" *ngIf="registerForm.get('PrjDescription')?.errors?.['minlength'] || registerForm.get('PrjDescription')?.errors?.['maxlength']">❌La description dois faire minimum 30 caractères et maximum 1000 caractères</span>
         <span class="txt-valid" *ngIf="registerForm.get('PrjDescription')?.valid">✔</span>
     </div>
 
     <div class="form-group">
         <label for="PrjGoal">Goal :</label>
-        <input id="PrjGoal" type="number" formControlName="PrjGoal" placeholder="Montant a atteindre">   
-        <span class="txt-error" *ngIf="registerForm.get('PrjGoal')?.errors?.['min'] || registerForm.get('PrjGoal')?.errors?.['max']" >Le montant dois etre au minimum egale a 0 Euro</span>
+        <input id="PrjGoal" type="number" formControlName="PrjGoal" placeholder="Montant a atteindre">
+        <span class="txt-error" *ngIf="registerForm.get('PrjGoal')?.touched && registerForm.get('PrjGoal')?.errors?.['required']">❌Le champs est requis</span>
+        <span class="txt-error" *ngIf="registerForm.get('PrjGoal')?.errors?.['min'] || registerForm.get('PrjGoal')?.errors?.['max']">❌Le montant dois etre au minimum egale a 0 Euro</span>
         <span class="txt-valid" *ngIf="registerForm.get('PrjGoal')?.valid">✔</span>
-
     </div>
     <div class="form-group">
         <label for="PrjDtIn">Date début :</label>
-        <input id="PrjDtIn" type="date" formControlName="PrjDtIn" placeholder="Date de début">   
-        <span class="txt-error" *ngIf="registerForm.get('PrjDtIn')?.touched && registerForm.get('PrjDtIn')?.errors?.['required']" >Le champs est requis</span>
+        <input id="PrjDtIn" type="date" formControlName="PrjDtIn" placeholder="Date de début" value={{today.getFullYear}}>
+   
+        <span class="txt-error" *ngIf="registerForm.get('PrjDtIn')?.touched && registerForm.get('PrjDtIn')?.errors?.['required']">❌Le champs est requis</span>
+        <span class="txt-error" *ngIf="registerForm.get('PrjDtIn')?.errors?.['ChkDtIn']">❌La date dois etre superieur a la date actuel</span>
         <span class="txt-valid" *ngIf="registerForm.get('PrjDtIn')?.valid">✔</span>
     </div>
-    <div class="form-group">
+    <div class="form-group" *ngIf="registerForm.get('PrjDtIn')?.valid">
         <label for="PrjDtOut">Date fin :</label>
         <input id="PrjDtOut" type="date" formControlName="PrjDtOut" placeholder="Date de fin">   
-        <span *ngIf="registerForm.get('PrjDtOut')?.touched && registerForm.get('PrjDtOut')?.errors?.['required']" class="txt-error">Le champs est requis</span>        
-        <span class="txt-error" *ngIf="registerForm.errors?.['max5yr']">Durée de maximum 5 ans</span>
+        <span class="txt-error" *ngIf="registerForm.get('PrjDtOut')?.touched && registerForm.get('PrjDtOut')?.errors?.['required']">❌Le champs est requis</span>
+        <span class="txt-error" *ngIf="registerForm.errors?.['max5yr']">❌Durée de maximum 5 ans</span>
+        <span class="txt-error" *ngIf="registerForm.errors?.['min28day']">❌Durée dois faire minimum 28 jours</span>
         <span class="txt-valid" *ngIf="registerForm.get('PrjDtOut')?.valid">✔</span>
     </div>
-        
         
     <div class="form-submit">
         <input class="button" type="submit" value="Envoyer" (click)="sendformprj()">
