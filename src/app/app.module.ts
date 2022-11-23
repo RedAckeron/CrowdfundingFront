@@ -12,6 +12,7 @@ import { EditUserComponent } from './admin/edit-user/edit-user.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
+import { AddStepComponent } from './project/add-step/add-step.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddProjectComponent } from './project/add-project/add-project.component
     EditUserComponent,
     AdminComponent,
     UserComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    AddStepComponent
   ],
   imports: [
     BrowserModule,
