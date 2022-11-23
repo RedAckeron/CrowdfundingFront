@@ -22,11 +22,12 @@ export class NavbarComponent implements OnInit {
       {title : "Contributor",MinRole:1, url : "/user", children : [
         { title : "User Inscription",MinRole: 1 , url : "/user/userinscription"},
         { title : "My Contribution",MinRole: 1 , url : "/exercice/exo1"},
+        { title : "Add Project",MinRole:1, url : "/AddProject"},
         { title : "Show all project",MinRole: 1 , url : "/exercice/exo2"}
       ], isVisible : true},
 
       {title : "Project Owner",MinRole:2, url : "/exercice", children : [
-        { title : "My Project",MinRole:2, url : "/exercice/exo1"},
+        { title : "Add Project",MinRole:2, url : "/project/add-project"},
         { title : "Edit Project",MinRole:2, url : "/exercice/exo2"}
       ], isVisible : false},
 

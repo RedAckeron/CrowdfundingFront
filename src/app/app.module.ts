@@ -12,6 +12,7 @@ import { EditUserComponent } from './admin/edit-user/edit-user.component';
 import { AdminComponent } from './admin/admin.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
 import { AddStepComponent } from './project/add-step/add-step.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [

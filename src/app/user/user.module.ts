@@ -7,7 +7,7 @@ import { UserinscriptionComponent} from './userinscription/userinscription.compo
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [UserComponent,
+  declarations: [
     UserinscriptionComponent
   ],
   imports: [
