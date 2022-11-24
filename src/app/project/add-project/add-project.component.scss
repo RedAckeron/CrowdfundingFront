@@ -20,7 +20,6 @@ input[type="checkbox"]{
 
 input[type="checkbox"]:checked{
     accent-color: black;
-    
 }
 
 .form-group {
@@ -41,4 +40,16 @@ input[type="checkbox"]:checked{
     margin-left: 1%;
     color : green;
     font-size: small;
+}
+.MyProject{
+    border: 1px solid black;    
+    margin: 10px;
+    background-color: rgb(111, 184, 243);
+    height:auto;
+    width:100vh; 
+}
+.title{
+    font-size: x-large;
+    text-size-adjust: 30px;
+    text-align: center;
 }

@@ -3,16 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { InscriptionComponent } from './user/inscription/inscription.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ConnectedComponent } from './user/connected/connected.component';
 import { HomeComponent } from './home/home.component';
 import { EditProjetComponent } from './admin/edit-projet/edit-projet.component';
-import { EditUserComponent } from './admin/edit-user/edit-user.component';
 import { AdminComponent } from './admin/admin.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
-import { AddStepComponent } from './project/add-step/add-step.component';
 import { UserComponent } from './user/user.component';
+import { UserConnectedComponent } from './user/userconnected/userconnected.component';
+import { AddStepComponent } from './project/add-step/add-step.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +20,9 @@ import { UserComponent } from './user/user.component';
     EditProjetComponent,
     AdminComponent,
     UserComponent,
-    AddProjectComponent
+    UserConnectedComponent,
+    AddProjectComponent,
+    AddStepComponent
   ],
   imports: [
     BrowserModule,

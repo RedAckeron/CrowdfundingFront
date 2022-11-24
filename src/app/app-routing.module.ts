@@ -6,7 +6,7 @@ import { EditUserComponent } from './admin/edit-user/edit-user.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
-import { ConnectedComponent } from './user/connected/connected.component';
+import { AddStepComponent } from './project/add-step/add-step.component';
 //import { InscriptionComponent } from './user/inscription/inscription.component';
 import { UserComponent } from './user/user.component';
 
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path : "user", component : UserComponent, 
       loadChildren : () => import("./user/user.module").then(m => m.UserModule)},
   {path:"AddProject", component :AddProjectComponent},
-  
+  {path:"AddProjectStep", component :AddStepComponent},
   {path:"Admin", component :AdminComponent},
   {path:"AdminEditUser", component :EditUserComponent},
   {path:"AdminEditProject", component :EditProjetComponent},

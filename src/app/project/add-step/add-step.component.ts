@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-step',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-step.component.scss']
 })
 export class AddStepComponent implements OnInit {
-
-  constructor() { }
+registerForm : FormGroup;
+  constructor(private _builder : FormBuilder) {     
+    this.registerForm = this._builder.group({});
+    }
 
   ngOnInit(): void {
   }

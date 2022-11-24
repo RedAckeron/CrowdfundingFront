@@ -13,23 +13,28 @@
                 </div>
             </li>
         </ul>
-    </div>
-    <div *ngIf="user.role==0">Role : Visiteur</div>
-    <div *ngIf="user.role==1">Role : User</div>
-    <div *ngIf="user.role==2">Role : Owner</div>
-    <div *ngIf="user.role==3">Role : Admin</div>
-    
-    <div class="role">
-        <!-- A effacer apres les test -->
-        <div class="PanelTest">Panel temp pour test role 
-            <button (click)="user.SetRole(0)">Role 0 : Unregistered</button>
-            <button (click)="user.SetRole(1)">Role 1 : Contributeur</button>
-            <button (click)="user.SetRole(2)">Role 2 : Owner</button>
-            <button (click)="user.SetRole(3)">Role 3 : Admin</button>
+
+
+
+        <div class="role">
+            <!-- A effacer apres les test -->
+            <div class="PanelTest">Panel temp pour test role 
+                <button (click)="user.SetRole(0)">Role 0 : Unregistered</button>
+                <button (click)="user.SetRole(1)">Role 1 : Contributeur</button>
+                <button (click)="user.SetRole(2)">Role 2 : Owner</button>
+                <button (click)="user.SetRole(3)">Role 3 : Admin</button>
+            </div>
+            <div *ngIf="user.role==0">Role : Visiteur</div>
+            <div *ngIf="user.role==1">Role : User</div>
+            <div *ngIf="user.role==2">Role : Owner</div>
+            <div *ngIf="user.role==3">Role : Admin</div>
         </div>
+    </div>
+   
+    
 
        
-    </div>
+
     
     
 </nav>
