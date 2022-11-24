@@ -12,9 +12,10 @@ import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {path:"", component :HomeComponent},
-  { path : "user", component : UserComponent, 
+  { path : "user", component : UserComponent,
       loadChildren : () => import("./user/user.module").then(m => m.UserModule)},
   {path:"AddProject", component :AddProjectComponent},
+
   {path:"AddProjectStep", component :AddStepComponent},
   {path:"Admin", component :AdminComponent},
   {path:"AdminEditUser", component :EditUserComponent},

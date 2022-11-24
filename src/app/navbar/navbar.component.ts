@@ -11,7 +11,7 @@ import { User } from '../models/user';
 export class NavbarComponent implements OnInit {
   menu:Link[]=[];
 
-  user:User=new User('Bob',0);
+  user:User=new User(0,'Rumata76','ndihopaul@hotmail.com','1234',new Date,2);
 
   constructor() { }
 

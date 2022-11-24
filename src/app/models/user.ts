@@ -1,17 +1,24 @@
-export class User{
-    public name : string;
-    public role : number;//1:contributeur 2:Owner 3: Admin
-    
-constructor(name:string,role:number)
-    {
-    this.name=name;
-    this.role=role;
-    }
+export class User {
+  Id : number;
+  NickName : string;
+  Email : string;
+  Password : string;
+  Birthdate : Date;
+  IdRole : number;
+
+  constructor(Id : number, NickName : string, Email : string, Password : string, Birthdate : Date, IdRole : number){
+      this.Id = Id;
+      this.NickName = NickName;
+      this.Email = Email;
+      this.Password = Password;
+      this.Birthdate = Birthdate;
+      this.IdRole = IdRole;
+  }
 
 SetRole(IdRole:number){
-    if(IdRole==0)this.role=0;
-    if(IdRole==1)this.role=1;
-    if(IdRole==2)this.role=2;
-    if(IdRole==3)this.role=3;
+    if(IdRole==0)this.IdRole=0;
+    if(IdRole==1)this.IdRole=1;
+    if(IdRole==2)this.IdRole=2;
+    if(IdRole==3)this.IdRole=3;
     }
 }

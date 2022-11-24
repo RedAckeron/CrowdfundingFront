@@ -2,53 +2,46 @@
     <p>Formulaire d'inscription</p>
 
     <form [formGroup]="registerForm" (ngSubmit)="register()">
-        <div class="form-group">
-            <label for="lastname">Nom :</label>
-            <input id="lastname" type="text" formControlName="lastname">
-            <!-- On regarde si le champs est valide ou non (mais on ne saura pas pourquoi il est invalide) -->
-            <!-- <span *ngIf="!registerForm.get('lastname')?.valid" class="txt-error">Le champs n'est pas valide</span> -->
-            <span *ngIf="registerForm.get('lastname')?.touched && registerForm.get('lastname')?.errors?.['required']" class="txt-error">Le champs est requis</span>
 
-            <span *ngIf="registerForm.get('lastname')?.errors?.['minlength'] || registerForm.get('lastname')?.errors?.['maxlength']" class="txt-error">Votre nom doit faire minimum 2 caractères et maximum 100 caractères</span>
+
+        <div class="form-group">
+            <label for="NickNname">Pseudo :</label>
+            <input id="NickName" type="text" formControlName="NickName">
+            <span *ngIf="registerForm.get('NickName')?.touched && registerForm.get('NickName')?.errors?.['required']" class="txt-error">Le champs est requis</span>
+
+            <span *ngIf="registerForm.get('NickName')?.errors?.['minlength'] || registerForm.get('NickName')?.errors?.['maxlength']" class="txt-error">Votre prénom doit faire minimum 2 caractères et maximum 100 caractères</span>
         </div>
 
         <div class="form-group">
-            <label for="firstname">Prénom :</label>
-            <input id="firstname" type="text" formControlName="firstname">
-            <span *ngIf="registerForm.get('firstname')?.touched && registerForm.get('firstname')?.errors?.['required']" class="txt-error">Le champs est requis</span>
+            <label for="Email">Email : </label>
+            <input id="Email" type="Email" formControlName="Email">
+            <span *ngIf="registerForm.get('Email')?.touched && registerForm.get('Email')?.errors?.['required']" class="txt-error">Le champs est requis</span>
 
-            <span *ngIf="registerForm.get('firstname')?.errors?.['minlength'] || registerForm.get('firstname')?.errors?.['maxlength']" class="txt-error">Votre prénom doit faire minimum 2 caractères et maximum 100 caractères</span>
+            <span *ngIf="registerForm.get('Email')?.errors?.['Email']" class="txt-error">Votre email est invalide</span>
         </div>
 
         <div class="form-group">
-            <label for="email">Email : </label>
-            <input id="email" type="email" formControlName="email">
-            <span *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']" class="txt-error">Le champs est requis</span>
-
-            <span *ngIf="registerForm.get('email')?.errors?.['email']" class="txt-error">Votre email est invalide</span>
+            <label for="Password">Mot de passe : </label>
+            <input id="Password" type="Password" formControlName="Password">
+            <span *ngIf="registerForm.get('Password')?.touched && registerForm.get('Password')?.errors?.['required']" class="txt-error">Le champs est requis</span>
         </div>
 
         <div class="form-group">
-            <label for="password">Mot de passe : </label>
-            <input id="password" type="password" formControlName="password">
-            <span *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']" class="txt-error">Le champs est requis</span>
-        </div>
-
-        <div class="form-group">
-            <label for="birthdate">Date de naissance : </label>
-            <input id="birthdate" type="date" formControlName="birthdate">
-            <span *ngIf="registerForm.get('birthdate')?.touched && registerForm.get('birthdate')?.errors?.['required']" class="txt-error">Le champs est requis</span>
-        </div>
+          <label for="Birthdate">Date de naissance : </label>
+          <input id="Birthdate" type="date" formControlName="Birthdate">
+          <span *ngIf="registerForm.get('Birthdate')?.touched && registerForm.get('Birthdate')?.errors?.['required']" class="txt-error">Le champs est requis</span>
+          <span class="txt-error" *ngIf="registerForm.get('Birthdate')?.errors?.['mineur']">Vous devez être majeur 🔞</span>
+      </div>
 
 
 
         <div class="form-group">
-            <label for="role">Votre Role : </label>
-            <select formControlName="role" id="role">
+            <label for="IdRole">Votre Role : </label>
+            <select formControlName="IdRole" id="IdRole">
                 <option value="" hidden>Choisissez un role dans la liste</option>
-                <option *ngFor="let role of listRole" [value]="role">{{role}}</option>
+                <option *ngFor="let IdRole of listRole" [value]="IdRole">{{IdRole}}</option>
             </select>
-            <span *ngIf="registerForm.get('role')?.touched && registerForm.get('role')?.errors?.['required']" class="txt-error">Le champs est requis</span>
+            <span *ngIf="registerForm.get('IdRole')?.touched && registerForm.get('IdRole')?.errors?.['required']" class="txt-error">Le champs est requis</span>
         </div>
 
         <div class="form-submit">
