@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import * as dayjs from 'dayjs';
 import { concatWith } from 'rxjs';
-import { Project } from 'src/app/models/Project';
+import { NewProject } from 'src/app/models/Project/NewProject';
 
 @Component({
   selector: 'app-add-project',
@@ -86,6 +86,18 @@ sendformprj(){
 
 
     let project = new Project(1,this.registerForm.value['PrjName'],this.registerForm.value['PrjDescription'],this.registerForm.value['PrjGoal'],this.registerForm.value['PrjDtIn'],this.registerForm.value['PrjDtOut'],false);
+
+
+
+    let project = new NewProject(
+      1,
+      this.registerForm.value['PrjName'],
+      this.registerForm.value['PrjDescription'],
+      this.registerForm.value['PrjGoal'],
+      this.registerForm.value['PrjDtIn'],
+      this.registerForm.value['PrjDtOut'],
+      false
+    );
 
 
 

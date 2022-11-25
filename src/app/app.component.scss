@@ -8,5 +8,13 @@ main {
     min-height: 100vh;
     background-color: lightgray;
     padding: 0 3%;
+}
 
+.project-row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-row:nth-child(odd) {
+  border-top: 1px solid black;
 }
