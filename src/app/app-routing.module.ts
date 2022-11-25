@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
-import { EditUserComponent } from './admin/edit-user/edit-user.component';
+import { AdminEditUserComponent } from './admin/admin-edit-user/admin-edit-user.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
@@ -20,8 +19,7 @@ const routes: Routes = [
     {path:"editProject/:id", component :EditProjectComponent},
 
     {path:"AddProjectStep", component :AddStepComponent},
-    {path:"Admin", component :AdminComponent},
-    {path:"AdminEditUser", component :EditUserComponent},
+    {path:"AdminEditUser", component :AdminEditUserComponent},
 
   ];
 

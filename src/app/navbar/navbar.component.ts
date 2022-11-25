@@ -20,18 +20,11 @@ export class NavbarComponent implements OnInit {
       {title:"Accueil",MinRole:0,url:"",isVisible:true},
 
       {title : "Mon Profil",MinRole:1, url : "/user/userconnected", children : [
-        //{ title : "User Inscription",MinRole: 1 , url : "/user/userinscription"},
         { title : "My Contribution",MinRole: 1 , url : ""},
         { title : "Add Project",MinRole:1, url : "/AddProject"},
         { title : "Show Projects",MinRole:1, url : "/ShowProjects"},
-        //{ title : "Show all project",MinRole: 1 , url : ""}
       ], isVisible : true},
-/*
-      {title : "Project Owner",MinRole:2, url : "/exercice", children : [
-        { title : "Add Project",MinRole:2, url : "/project/add-project"},
-        { title : "Edit Project",MinRole:2, url : "/exercice/exo2"}
-      ], isVisible : false},
-*/
+
       {title : "Administrateur",MinRole:3, url : "/Admin", children : [
         { title : "Edit User",MinRole:3, url : "/AdminEditUser"},
         { title : "Edit Project",MinRole:3, url : "/AdminEditProject"}
