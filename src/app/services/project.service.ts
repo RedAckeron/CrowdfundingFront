@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EditProject } from '../models/Project/EditProject';
+import { NewProject } from '../models/Project/NewProject';
 import { Project } from '../models/Project/Project';
 
 
@@ -18,7 +19,7 @@ export class ProjectService {
     return this._httpClient.get<Project[]>(this._url + "GetAll/");
   }
 
-  getById(id : string) : Observable<Project>{
+  getById(id : string) : Observable<NewProject>{
     return this._httpClient.get<Project>(this._url + "GetOne/" + id)
   }
 
