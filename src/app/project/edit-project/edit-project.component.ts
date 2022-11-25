@@ -29,6 +29,7 @@ export class EditProjectComponent implements OnInit {
     this._projectService.getById(this._activeRoute.snapshot.params['id']).subscribe({
       next : (res : Project) => {
         this.project = new EditProject(
+          res.id,
           res.title,
           res.description,
           res.goal,
@@ -47,6 +48,8 @@ export class EditProjectComponent implements OnInit {
     this.project.title = this.projectForm.get('title')?.value
     this.project.description = this.projectForm.get('description')?.value
     this.project.goal = this.projectForm.get('goal')?.value
+
+    console.log(this.project)
 
     this._projectService.update(this.project).subscribe((e) => {
       console.log(e)

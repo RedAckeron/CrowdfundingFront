@@ -17,12 +17,14 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.menu=[
-      {title:"Accueil",MinRole:0,url:"",isVisible:true},
+      {title:"Accueil",MinRole:0,url:"", children : [
+        { title : "Show Projects",MinRole:1, url : "/ShowProjects"},
+      ], isVisible:true},
 
       {title : "Mon Profil",MinRole:1, url : "/user/userconnected", children : [
         { title : "My Contribution",MinRole: 1 , url : ""},
         { title : "Add Project",MinRole:1, url : "/AddProject"},
-        { title : "Show Projects",MinRole:1, url : "/ShowProjects"},
+        { title : "My Projects",MinRole:1, url : "/ShowUserProjects"},
       ], isVisible : true},
 
       {title : "Administrateur",MinRole:3, url : "/Admin", children : [

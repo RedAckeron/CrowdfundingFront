@@ -27,7 +27,7 @@ export class ProjectService {
     return this._httpClient.post(this._url, project)
   }
 
-  update(project : EditProject){
+  update(project : EditProject,){
     return this._httpClient.put(this._url + "update", project)
   }
 
