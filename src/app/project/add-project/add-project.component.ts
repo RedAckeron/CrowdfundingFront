@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import * as dayjs from 'dayjs';
 import { concatWith } from 'rxjs';
-import { Project } from 'src/app/models/Project';
+import { NewProject } from 'src/app/models/Project/NewProject';
 
 @Component({
   selector: 'app-add-project',
@@ -29,8 +29,8 @@ export class AddProjectComponent implements OnInit {
   }
 
 //Verification de la date entrée
-ChkDtIn(): ValidatorFn | null 
-    {           
+ChkDtIn(): ValidatorFn | null
+    {
       return (control : AbstractControl) => {
       if(dayjs(control.value).format('YYYY/MM/DD')>=(dayjs(new Date()).format('YYYY/MM/DD')))
         {
@@ -41,7 +41,7 @@ ChkDtIn(): ValidatorFn | null
           }
       }
     }
-  
+
   //si la diff est plus grande que5 ans sa renvoi error
 ChkDtOut(form : FormGroup)    {
   let dt_in=dayjs(form.value['PrjDtIn']);
@@ -50,7 +50,7 @@ ChkDtOut(form : FormGroup)    {
 
   //console.log(dt_out.format('DD/MM/YYYY'));
   //console.log(dtoutmin.format('DD/MM/YYYY'));
-   
+
   if(dt_out>dtoutmin){
       //console.log("Il y a plus de 28 jours");
       return null
@@ -73,22 +73,30 @@ ValidatorDateDiff(form : FormGroup)    {
     }
 
     }
-  
-  
-  
-//Envoi du form vers le service 
+
+
+
+//Envoi du form vers le service
 sendformprj(){
     if(this.registerForm.invalid){
       //Si l'entièreté du formulaire est invalide, on va marquer tous les champs comme touchés
       this.registerForm.markAllAsTouched();
     }
     else {
-      
 
-    let project = new Project(1,this.registerForm.value['PrjName'],this.registerForm.value['PrjDescription'],this.registerForm.value['PrjGoal'],this.registerForm.value['PrjDtIn'],this.registerForm.value['PrjDtOut'],false);
-    
-    
-    
+
+    let project = new NewProject(
+      1,
+      this.registerForm.value['PrjName'],
+      this.registerForm.value['PrjDescription'],
+      this.registerForm.value['PrjGoal'],
+      this.registerForm.value['PrjDtIn'],
+      this.registerForm.value['PrjDtOut'],
+      false
+    );
+
+
+
     console.log(project);
 
 /*
@@ -100,13 +108,13 @@ sendformprj(){
       endDate : Date;
       isValidate : boolean;
 */
-    
+
       //Construit un object json avec toutes les valeurs du formulaire
       //A faire normalement avec une db :
       //let user = new User(...this.registerForm.value); //Crée l'objet à insérer en db
       //this._authService.register(user);
-       
-    }    
+
+    }
 
 
   }

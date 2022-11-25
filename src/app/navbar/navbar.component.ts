@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
         //{ title : "User Inscription",MinRole: 1 , url : "/user/userinscription"},
         { title : "My Contribution",MinRole: 1 , url : ""},
         { title : "Add Project",MinRole:1, url : "/AddProject"},
+        { title : "Show Projects",MinRole:1, url : "/ShowProjects"},
         //{ title : "Show all project",MinRole: 1 , url : ""}
       ], isVisible : true},
 /*
