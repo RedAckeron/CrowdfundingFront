@@ -10,6 +10,7 @@ export class Project {
     endDate : Date;
     isValidate : boolean;
     steps : Step[];
+
     constructor(
       id : number,
       idOwner : number,
@@ -20,6 +21,7 @@ export class Project {
       endDate : Date,
       isValidate : boolean,
       steps : Step[]
+
       ){
         this.id = id;
         this.idOwner = idOwner;
