@@ -1,0 +1,84 @@
+.PrjFrame{
+background-color: chartreuse;
+border: 1px solid black;
+width:50Vw;
+height:auto;
+}
+.StepFrame{
+background-color: steelblue;
+border: 1px solid black;
+width:50Vw;
+height:auto;
+}
+.StepForm{
+background-color: orange;
+border: 1px solid black;
+width:50Vw;
+height:auto;   
+}
+.debug{
+    background-color: red;
+}
+label {
+    width: 20%;
+}
+
+input:not(input[type="submit"], input[type="checkbox"]) {
+    width: 50%;
+    height: 26px;
+}
+
+input:focus:not(input[type="checkbox"], input[type="submit"]) {
+    outline: 1px solid black;
+}
+
+input[type="checkbox"]{
+    transform: scale(1.75);
+}
+
+input[type="checkbox"]:checked{
+    accent-color: black;
+}
+.form-submit{
+    height:50px
+}
+.form-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2%;
+}
+.txt-error {
+    width: 100;
+    margin-left: 1%;
+    color : darkred;
+    font-size: small;
+}
+
+.txt-valid {
+    width: 25%;
+    margin-left: 1%;
+    color : green;
+    font-size: small;
+}
+.MyProject{
+    border: 1px solid black;    
+    margin: 10px;
+    background-color: rgb(111, 184, 243);
+    height:auto;
+    width:100vh; 
+}
+.title{
+    font-size: x-large;
+    text-size-adjust: 30px;
+    text-align: center;
+}
+.ListStep{
+    display: flex;
+}
+.ListStepLabel{
+    width:auto;
+}
+.ListStepbtndel{
+    width:30px;
+}

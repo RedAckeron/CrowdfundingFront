@@ -4,7 +4,6 @@ import { AdminEditUserComponent } from './admin/admin-edit-user/admin-edit-user.
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
-import { AddStepComponent } from './project/add-step/add-step.component';
 import { EditProjectComponent } from './project/edit-project/edit-project.component';
 import { ShowProjectsComponent } from './project/show-projects/show-projects.component';
 import { ShowUserProjectComponent } from './project/show-user-project/show-user-project.component';

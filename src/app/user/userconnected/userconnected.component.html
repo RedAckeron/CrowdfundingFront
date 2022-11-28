@@ -1,7 +1,18 @@
 <div class="menu">Dashboard utilisateur</div>
 <div class="MyContribution">
-    Liste des contributions qu on a fais dans chaque projets 
+    Liste des contributions qu on a fais dans chaque projets
 </div>
 <div class="MyProject">
     Liste des projets de l utilisateur
+
+    <div class="project-row">
+        <div>Nom</div>
+        <div></div>
+    </div>
+    <div *ngFor="let project of projects">
+        <div class="project-row">
+            <div>{{project.title}}</div>
+            <div><a routerLink="/editProject/{{project.idOwner}}">Edit</a></div>
+        </div>
+    </div>
 </div>
