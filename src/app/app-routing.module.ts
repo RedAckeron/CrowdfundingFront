@@ -7,6 +7,8 @@ import { AddProjectComponent } from './project/add-project/add-project.component
 import { AddStepComponent } from './project/add-step/add-step.component';
 import { EditProjectComponent } from './project/edit-project/edit-project.component';
 import { ShowProjectsComponent } from './project/show-projects/show-projects.component';
+import { ShowUserProjectComponent } from './project/show-user-project/show-user-project.component';
+import { LoginComponent } from './user/login/login.component';
 //import { InscriptionComponent } from './user/inscription/inscription.component';
 import { UserComponent } from './user/user.component';
 
@@ -18,8 +20,10 @@ const routes: Routes = [
     {path:"ShowProjects", component :ShowProjectsComponent},
     {path:"editProject/:id", component :EditProjectComponent},
 
-    {path:"AddProjectStep", component :AddStepComponent},
-    {path:"AdminEditUser", component :AdminEditUserComponent},
+    {path:"AddProjectStep", component : AddStepComponent},
+    {path:"AdminEditUser", component : AdminEditUserComponent},
+    {path:"UserLogin", component : LoginComponent},
+    {path:"userProjects", component : ShowUserProjectComponent}
 
   ];
 

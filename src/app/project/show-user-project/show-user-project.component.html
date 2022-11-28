@@ -1,0 +1,11 @@
+<h2>Liste des projets</h2>
+<div class="project-row">
+  <div>Nom</div>
+  <div></div>
+</div>
+<div *ngFor="let project of projects">
+  <div class="project-row">
+    <div>{{project.title}}</div>
+    <div><a routerLink="/{{project.id}}">Contribute</a></div>
+  </div>
+</div>

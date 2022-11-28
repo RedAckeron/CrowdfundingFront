@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import jwtDecode from 'jwt-decode';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../models/user';
 import { Login } from '../models/User/Login';
@@ -12,7 +13,7 @@ import { Token } from '../models/User/Token';
 
 export class UserService {
 
-  private _url : string = "http://localhost:8125/api/user/register";
+  private _url : string = "http://localhost:5000/api/user/";
 
   private _isConnected$ : BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
   isConnected$ : Observable<boolean> = this._isConnected$.asObservable();
@@ -21,7 +22,7 @@ export class UserService {
   constructor(private _httpClient : HttpClient, private _router : Router) { }
 
   postUser(user : User) : Observable<User> {
-    return this._httpClient.post<User>(this._url, user);
+    return this._httpClient.post<User>(this._url + "register", user);
   }
 
   login(loginForm : Login) : void {

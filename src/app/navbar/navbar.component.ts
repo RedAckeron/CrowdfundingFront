@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
       {title : "Mon Profil",MinRole:1, url : "/user/userconnected", children : [
         { title : "My Contribution",MinRole: 1 , url : ""},
         { title : "Add Project",MinRole:1, url : "/AddProject"},
-        { title : "My Projects",MinRole:1, url : "/ShowUserProjects"},
+        { title : "My Projects",MinRole:1, url : "/userProjects"},
       ], isVisible : true},
 
       {title : "Administrateur",MinRole:3, url : "/Admin", children : [

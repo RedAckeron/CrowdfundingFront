@@ -7,10 +7,12 @@ import { UserinscriptionComponent} from './userinscription/userinscription.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../services/user.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     UserinscriptionComponent,
+    LoginComponent,
     
   ],
   imports: [

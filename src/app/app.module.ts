@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditStepComponent } from './project/edit-step/edit-step.component';
 import { AdminEditProjectComponent } from './admin/admin-edit-project/admin-edit-project.component';
 import { AdminEditUserComponent } from './admin/admin-edit-user/admin-edit-user.component';
+import { ShowUserProjectComponent } from './project/show-user-project/show-user-project.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AdminEditUserComponent } from './admin/admin-edit-user/admin-edit-user.
     EditProjectComponent,
     EditStepComponent,
     AdminEditProjectComponent,
-    AdminEditUserComponent
+    AdminEditUserComponent,
+    ShowUserProjectComponent
   ],
   imports: [
     BrowserModule,
