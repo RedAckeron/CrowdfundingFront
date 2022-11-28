@@ -7,11 +7,14 @@ import { UserinscriptionComponent} from './userinscription/userinscription.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../services/user.service';
+import { LoginService } from '../services/login.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     UserinscriptionComponent,
-    
+    LoginComponent
+
   ],
   imports: [
     CommonModule,
@@ -23,6 +26,9 @@ import { UserService } from '../services/user.service';
   ],
   bootstrap : [UserComponent
   ],
-  providers : [UserService]
+  providers : [
+    UserService,
+    LoginService
+  ]
 })
 export class UserModule { }

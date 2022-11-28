@@ -85,7 +85,6 @@ sendformprj(){
     else {
 
 
-    let project = new Project(1,this.registerForm.value['PrjName'],this.registerForm.value['PrjDescription'],this.registerForm.value['PrjGoal'],this.registerForm.value['PrjDtIn'],this.registerForm.value['PrjDtOut'],false);
 
 
 

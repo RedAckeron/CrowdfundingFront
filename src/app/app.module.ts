@@ -7,7 +7,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
 import { UserComponent } from './user/user.component';
-import { UserConnectedComponent } from './user/userconnected/userconnected.component';
 import { AddStepComponent } from './project/add-step/add-step.component';
 import { ShowProjectsComponent } from './project/show-projects/show-projects.component';
 import { EditProjectComponent } from './project/edit-project/edit-project.component';
@@ -22,7 +21,6 @@ import { AdminEditUserComponent } from './admin/admin-edit-user/admin-edit-user.
     NavbarComponent,
     HomeComponent,
     UserComponent,
-    UserConnectedComponent,
     AddProjectComponent,
     AddStepComponent,
     ShowProjectsComponent,
