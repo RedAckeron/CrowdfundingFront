@@ -4,6 +4,7 @@ import * as dayjs from 'dayjs';
 import { concatWith } from 'rxjs';
 import { NewProject } from 'src/app/models/Project/NewProject';
 import { Project } from 'src/app/models/Project/Project';
+import { Step } from 'src/app/models/Step/Step';
 import { DateService } from 'src/app/services/date.service';
 import {ProjectService} from 'src/app/services/project.service'
 @Component({
@@ -15,7 +16,6 @@ export class AddProjectComponent implements OnInit {
     //On a besoin d'une propriété de type FormGroup pour stocker notre formulaire
     registerForm : FormGroup;
     today = new Date();
-    _projectRepo? : ProjectService;
   //On doit injecter FormBuilder, qui va nous permettre de créer notre formulaire
   constructor(private _builder : FormBuilder, _dateService : DateService,_projectRepo : ProjectService) {
     //On crée un nouveau formulaire grâce à notre FormBuilder et on le stocke dans notre propriété registerForm
@@ -41,20 +41,23 @@ sendformprj(){
     }
     else {
 
+    let Steps : Step[] = [];
 
-    let project = new NewProject(
+    let project = new Project(
       1,
+      this.registerForm.value['PrjIdOwner'],
       this.registerForm.value['PrjName'],
       this.registerForm.value['PrjDescription'],
       this.registerForm.value['PrjGoal'],
       this.registerForm.value['PrjDtIn'],
       this.registerForm.value['PrjDtOut'],
-      false
+      false,
+      Steps
     );
 
-    //this._projectRepo?.create(project);
+   
 
-    console.log(project);
+   // console.log(this._projectRepo?.create(project));
     
 /*
       idOwner

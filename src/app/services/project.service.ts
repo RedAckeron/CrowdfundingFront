@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { EditProject } from '../models/Project/EditProject';
 import { NewProject } from '../models/Project/NewProject';
 import { Project } from '../models/Project/Project';
+import { Step } from '../models/Step/Step';
 
 
 @Injectable({
@@ -11,15 +12,17 @@ import { Project } from '../models/Project/Project';
 })
 export class ProjectService {
 
-  private _url : string = "http://localhost:5000/api/project/"
+  private _url : string = "http://localhost:5139/api/project/"
 
   constructor(private _httpClient : HttpClient) { }
 
   getAll() : Observable<Project[]>{
+    console.log(this._url + "GetAll/");
     return this._httpClient.get<Project[]>(this._url + "GetAll/");
+    
   }
 
-  getById(id : string) : Observable<NewProject>{
+  getById(id : string) : Observable<Project>{
     return this._httpClient.get<Project>(this._url + "GetOne/" + id)
   }
 
@@ -33,5 +36,11 @@ export class ProjectService {
 
   delete(id : string){
     return this._httpClient.delete(this._url + id)
+  }
+  addStep(step:Step){
+    return this._httpClient.post(this._url +"addstep",step)
+  }
+  delStep(idStep:number){
+    return this._httpClient.delete(this._url +"delstep/"+idStep)
   }
 }

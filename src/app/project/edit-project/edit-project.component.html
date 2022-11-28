@@ -1,29 +1,82 @@
-<h1>èygèvèyv</h1>
+<h1>Edition du Projet : {{projectForm.get('title')?.value}}</h1>
+<div class="PrjFrame"> 
+  <h3>Edition du projet : </h3>
+  <form [formGroup]="projectForm" (ngSubmit)="updateForm()">
+    <div class="form-group">
+     
+      <label for="title">Titre : </label>
+      <input id="title" type="text" formControlName="title">
 
-<form [formGroup]="projectForm" (ngSubmit)="updateForm()">
-  <div class="form-group">
-    <label for="title">Titre : </label>
-    <input id="title" type="text" formControlName="title">
+      <span *ngIf="projectForm.get('title')?.touched && projectForm.get('title')?.errors?.['required']"
+        class="input-error">Le champs est requis</span>
+    </div>
 
-    <span *ngIf="projectForm.get('title')?.touched && projectForm.get('title')?.errors?.['required']" class="input-error">Le champs est requis</span>
-  </div>
+    <div class="form-group">
+      <label for="descr">Description : </label>
+      <input id="descr" type="text" formControlName="description">
 
-  <div class="form-group">
-    <label for="descr">Description : </label>
-    <input id="descr" type="text" formControlName="description">
+      <span *ngIf="projectForm.get('description')?.touched && projectForm.get('description')?.errors?.['required']"
+        class="input-error">Le champs est requis</span>
+    </div>
 
-    <span *ngIf="projectForm.get('description')?.touched && projectForm.get('description')?.errors?.['required']" class="input-error">Le champs est requis</span>
-  </div>
+    <div class="form-group">
+      <label for="goal">Goal : </label>
+      <input id="goal" type="text" formControlName="goal">
 
-  <div class="form-group">
-    <label for="goal">Goal : </label>
-    <input id="goal" type="text" formControlName="goal">
+      <span *ngIf="projectForm.get('goal')?.touched && projectForm.get('goal')?.errors?.['required']"
+        class="input-error">Le champs est requis</span>
+    </div>
 
-    <span *ngIf="projectForm.get('goal')?.touched && projectForm.get('goal')?.errors?.['required']" class="input-error">Le champs est requis</span>
-  </div>
+    <div class="form-submit">
+      <input class="button" type="submit" value="Update">
+    </div>
+  </form>
 
-  <div class="form-submit">
-    <input class="button" type="submit" value="S'enregistrer">
-  </div>
-</form>
+</div>
 
+<div class="StepFrame">
+
+  <h3>Liste des Step</h3>
+  <ul>
+    <li *ngFor="let item of project.steps,index as i">
+      <div class="ListStep">
+      <div class="ListStepLabel">{{item.reward}}</div>
+      <div class="ListStepbtndel"><button (click)="delStep(item.id)">Effacer</button></div>
+    </div>
+    </li>
+
+  </ul>
+</div>
+<div class="StepForm">
+  <h3>Ajoute de palier</h3>
+  <form [formGroup]="StepForm" (ngSubmit)="AddStep()">
+    
+    <div class="form-group">
+      <label for="StepAmount">Montant :</label>
+      <input id="StepAmount" type="number" formControlName="StepAmount" placeholder="Montant du palier">
+      <span class="txt-error"*ngIf="StepForm.get('StepAmount')?.touched && StepForm.get('StepAmount')?.errors?.['required']"class="txt-error">Le champs est requis</span>
+      <span class="txt-error"*ngIf="StepForm.get('StepAmount')?.errors?.['minlength'] || StepForm.get('StepAmount')?.errors?.['maxlength']"class="txt-error">❌Le nom du projet doit faire minimum 2 caractères et maximum 100 caractères</span>
+      <span class="txt-valid"*ngIf="StepForm.get('StepAmount')?.valid">✔</span>
+    </div>
+
+    
+
+    <div class="form-group">
+      <label for="StepName">Récompense :</label>
+      <input id="StepName" type="text" formControlName="StepName" placeholder="Nom du projet">
+      
+      <span class="txt-error"*ngIf="StepForm.get('StepName')?.touched && StepForm.get('PrjName')?.errors?.['required']"class="txt-error">Le champs est requis</span>
+      <span class="txt-error"*ngIf="StepForm.get('StepName')?.errors?.['minlength'] || StepForm.get('StepName')?.errors?.['maxlength']"class="txt-error">❌Dois faire entre 2 et 100 caractères</span>
+      <span class="txt-valid"*ngIf="StepForm.get('StepName')?.valid">✔</span>
+    </div>
+
+    <div class="form-submit" >
+      <input class="button" type="submit" value="Ajouter"*ngIf="(StepForm.get('StepName')?.valid) && (StepForm.get('StepAmount')?.valid)">
+    </div>
+  </form>
+
+</div>
+
+
+
+<div>{{project.steps[0] | json}}</div>

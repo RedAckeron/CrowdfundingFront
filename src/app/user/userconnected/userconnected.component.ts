@@ -9,18 +9,18 @@ import { ProjectService } from 'src/app/services/project.service';
   styleUrls: ['./userconnected.component.scss']
 })
 export class UserConnectedComponent implements OnInit {
-  projects : NewProject[] = [];
+  projects : Project[] = [];
 
   constructor(private _projectService : ProjectService) { }
 
   ngOnInit(): void { 
     //getById(id : string) : Observable<Project>{
-    this._projectService.getById('1').subscribe({
+    this._projectService.getAll().subscribe({
     next : (res) => {
       console.log(res);
        
         // let prj:NewProject = res;
-        // this.projects=prj;
+         this.projects=res;
 
     }
   })

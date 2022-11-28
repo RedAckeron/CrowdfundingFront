@@ -8,11 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
 import { UserComponent } from './user/user.component';
 import { UserConnectedComponent } from './user/userconnected/userconnected.component';
-import { AddStepComponent } from './project/add-step/add-step.component';
 import { ShowProjectsComponent } from './project/show-projects/show-projects.component';
 import { EditProjectComponent } from './project/edit-project/edit-project.component';
 import { HttpClientModule } from '@angular/common/http';
-import { EditStepComponent } from './project/edit-step/edit-step.component';
 import { AdminEditProjectComponent } from './admin/admin-edit-project/admin-edit-project.component';
 import { AdminEditUserComponent } from './admin/admin-edit-user/admin-edit-user.component';
 
@@ -24,10 +22,8 @@ import { AdminEditUserComponent } from './admin/admin-edit-user/admin-edit-user.
     UserComponent,
     UserConnectedComponent,
     AddProjectComponent,
-    AddStepComponent,
     ShowProjectsComponent,
     EditProjectComponent,
-    EditStepComponent,
     AdminEditProjectComponent,
     AdminEditUserComponent
   ],
